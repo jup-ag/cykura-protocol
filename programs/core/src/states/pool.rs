@@ -1,5 +1,3 @@
-use anchor_lang::prelude::*;
-
 use crate::{
     program::CyclosCore,
     states::{
@@ -9,6 +7,7 @@ use crate::{
         tick_bitmap::BITMAP_SEED,
     },
 };
+use anchor_lang::prelude::*;
 
 use super::{oracle::ObservationState, tick::TickState};
 
@@ -68,8 +67,7 @@ pub struct PoolState {
     /// Protocol fees will never exceed u64::MAX in either token
     pub protocol_fees_token_0: u64,
     pub protocol_fees_token_1: u64,
-
-    /// Whether the pool is currently locked to reentrancy
+    // Whether the pool is currently locked to reentrancy
     pub unlocked: bool,
 }
 
